@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+   int arr[] = {5, 2, 8, 1, 9, 4};  // declare and initialize the array
+   int n = sizeof(arr)/sizeof(arr[0]);  // calculate the size of the array
+   int temp;
+
+   // sorting the array in ascending order using bubble sort algorithm
+   for(int i = 0; i < n; i++) {
+      for(int j = i+1; j < n; j++) {
+         if(arr[i] > arr[j]) {
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+         }
+      }
+   }
+
+   // displaying the sorted array
+   printf("The array in ascending order is: ");
+   for(int i = 0; i < n; i++) {
+      printf("%d ", arr[i]);
+   }
+
+   return 0;
+}
