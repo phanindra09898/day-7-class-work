@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main(){
+    int arry[5],n,l1,l2,tem;
+    printf("Enter the size of arry= ");
+    scanf("%d",&n);
+    printf("\nEnter the elementsin arry= ");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arry[i]);
+    }
+    l1=arry[0];
+    l2=arry[1];
+    if(l1<l2){
+        tem=l1;
+        l1=l2;
+        l2=tem;
+    }
+    for(int i=2;i<=n;i++){
+        if(arry[i]>l1){
+            l2=l1;
+            l1=arry[i];
+        }
+        else if(arry[i]>l2&&arry[i]!=l1){
+            l2=arry[i];
+        }
+    }
+    printf("First largest number=%d",l1);
+    printf("\nSecond largest number is=%d",l2);
+    return 0;
+}
