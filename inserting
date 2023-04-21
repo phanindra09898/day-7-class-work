@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+   int arr[100], size, insert, index, i;
+   printf("Enter size of array: ");
+   scanf("%d", &size);
+   printf("Enter array elements:\n");
+   for(i=0; i<size; i++) {
+      scanf("%d", &arr[i]);
+   }
+   printf("Enter element to be inserted: ");
+   scanf("%d", &insert);
+   printf("\nEnter index where element is to be inserted: ");
+   scanf("%d", &index);
+   for(i=size; i>index; i--) {
+      arr[i] = arr[i-1];
+   }
+   arr[index] = insert;  
+   printf("Array after insertion:\n");
+   for(i=0; i<size+1; i++) {
+      printf("%d ", arr[i]);
+   }
+   return 0;
+}
